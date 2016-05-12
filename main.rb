@@ -108,8 +108,8 @@ def m_uneven(m, n)
         $bridges[i] << $leftedgealt
         while $bridges[i].length != m * 2 - 4
           $bridges[i] << ' '
-          $bridges[i] << '| |'
         end
+        $bridges[i] << '| |'
       else
         $bridges[i] << $leftedge
         while $bridges[i].length != m * 2 - 5
@@ -301,11 +301,13 @@ def main
   n = Integer(ARGV[1])
   fname = ARGV[2]
   if m <= 3 or n <= 3
-    print('Imaginary world!..')
+    out = File.new(fname, "w+")
+    out.puts("Imaginary world!..")
     return
   end
   if m % 2 != 0 and n % 2 != 0
-    print('Imaginary world!..')
+    out = File.new(fname, "w+")
+    out.puts("Imaginary world!..")
     return
   end
   if m % 2 != 0
